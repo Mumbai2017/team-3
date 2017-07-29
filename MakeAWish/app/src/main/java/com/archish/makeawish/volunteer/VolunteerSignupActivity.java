@@ -5,6 +5,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.AppCompatSpinner;
 import android.view.View;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
 import com.archish.makeawish.R;
@@ -20,7 +21,7 @@ import com.archish.makeawish.ui.widgets.BaseEditText;
  */
 
 public class VolunteerSignupActivity extends BaseActivity implements VolunteerSignupContracts.VolunteerSignupView {
-    BaseEditText etFullName, etWant, etEmailid, etMobile;
+    BaseEditText etFullName, etWant, etEmailid, etMobile, etPassword;
     RadioGroup tvInfo;
     AppCompatSpinner appCompatSpinner;
     BaseButton bSubmit;
@@ -34,15 +35,11 @@ public class VolunteerSignupActivity extends BaseActivity implements VolunteerSi
         initViews();
     }
 
-    @Override
-    public void onNetworkException(Throwable e) {
-        super.onNetworkException(e);
-    }
 
     private void initViews() {
         final VolunteerRepository volunteerRepository = ((MakeAWishApp) getApplication()).getComponent().volunteerRepository();
         volunteerSignupPresenter = new VolunteerSignupPresenter(volunteerRepository, this);
-
+        etPassword = (BaseEditText) findViewById(R.id.etPassword);
         etEmailid = (BaseEditText) findViewById(R.id.tvEmailid);
         etMobile = (BaseEditText) findViewById(R.id.tvMobile);
         etFullName = (BaseEditText) findViewById(R.id.etFullName);
@@ -53,8 +50,11 @@ public class VolunteerSignupActivity extends BaseActivity implements VolunteerSi
         bSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                volunteerSignupPresenter.fetchData(etFullName.getText().toString()
-                ,tvInfo.get);
+                int selectedId = tvInfo.getCheckedRadioButtonId();
+
+                RadioButton radioButton = (RadioButton) findViewById(selectedId);
+                volunteerSignupPresenter.fetchData(etFullName.getText().toString(), etMobile.getText().toString()
+                        , radioButton.getText().toString(), String.valueOf(appCompatSpinner.getSelectedItemPosition() + 1), etEmailid.getText().toString(), etWant.getText().toString(), etPassword.getText().toString());
             }
         });
     }

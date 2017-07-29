@@ -1,5 +1,6 @@
 package com.archish.makeawish.volunteer;
 
+import com.archish.makeawish.common.BaseContract;
 import com.archish.makeawish.data.model.Success;
 
 import rx.Observable;
@@ -9,10 +10,11 @@ import rx.Observable;
  */
 
 public interface VolunteerSignupContracts {
-    interface VolunteerSignupView{
+    interface VolunteerSignupView extends BaseContract.BaseView {
         void onData(Success success);
     }
-    interface VolunteerSignupPresenter{
-        void fetchData(String fullname,String info,String sPrefLoc,String emailid,String want);
+
+    interface VolunteerSignupPresenter {
+        void fetchData(String fullname,String mobileno, String info, String sPrefLoc, String emailid, String want,String password);
     }
 }

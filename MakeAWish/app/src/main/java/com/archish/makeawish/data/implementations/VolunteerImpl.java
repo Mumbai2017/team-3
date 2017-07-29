@@ -1,6 +1,7 @@
 package com.archish.makeawish.data.implementations;
 
 import com.archish.makeawish.data.model.ErrorResponse;
+import com.archish.makeawish.data.model.Success;
 import com.archish.makeawish.data.remote.VolunteerRestService;
 import com.archish.makeawish.data.repository.VolunteerRepository;
 
@@ -17,10 +18,10 @@ public class VolunteerImpl implements VolunteerRepository {
         this.volunteerService = volunteerService;
     }
 
+
+
     @Override
-    public Observable<ErrorResponse> fetchData() {
-        return volunteerService.fetchData();
+    public Observable<Success> fetchData(String fullname,String mobileno, String info, String sPrefLoc, String emailid, String want,String password) {
+        return volunteerService.fetchData(fullname,mobileno,info,sPrefLoc,emailid,want,password);
     }
-
-
 }

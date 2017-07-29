@@ -23,8 +23,8 @@ public class VolunteerSignupPresenter implements VolunteerSignupContracts.Volunt
     }
 
     @Override
-    public void fetchData(String fullname, String info, String sPrefLoc, String emailid, String want) {
-        volunteerRepository.fetchData(fullname, info, sPrefLoc, emailid, want).observeOn(AndroidSchedulers.mainThread())
+    public void fetchData(String fullname, String mobileno, String info, String sPrefLoc, String emailid, String want, String password) {
+        volunteerRepository.fetchData(fullname, mobileno, info, sPrefLoc, emailid, want, password).observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.newThread())
                 .subscribe(new Observer<Success>() {
                     @Override
@@ -34,14 +34,14 @@ public class VolunteerSignupPresenter implements VolunteerSignupContracts.Volunt
 
                     @Override
                     public void onError(Throwable e) {
-                        if (view != null) ;
-
+                        if (view != null)
+                            view.onNetworkException(e);
                     }
 
                     @Override
                     public void onNext(Success success) {
                         if (view != null)
-                        view.onData(success);
+                            view.onData(success);
 
                     }
                 });

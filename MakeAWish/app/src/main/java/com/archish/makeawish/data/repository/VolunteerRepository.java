@@ -10,5 +10,5 @@ import rx.Observable;
  */
 
 public interface VolunteerRepository {
-    Observable<Success> fetchData(String fullname, String info, String sPrefLoc, String emailid, String want);
+    Observable<Success> fetchData(String fullname,String mobileno, String info, String sPrefLoc, String emailid, String want,String password);
 }

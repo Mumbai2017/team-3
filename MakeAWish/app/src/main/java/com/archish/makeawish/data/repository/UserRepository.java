@@ -1,0 +1,54 @@
+package com.archish.makeawish.data.repository;
+
+
+import com.archish.makeawish.data.model.UserResponse;
+
+import rx.Observable;
+
+/**
+ * Created by Archish on 1/14/2017.
+ */
+
+public interface UserRepository {
+    Observable<UserResponse> setUser(String fcm_token,
+                                     String fname,
+                                     String lname,
+                                     String emailid,
+                                     String phoneno,
+                                     String password,
+                                     int role);
+
+    Observable<UserResponse> setWorker(String fcm_token,
+                                       String fname,
+                                       String lname,
+                                       String emailid,
+                                       String phoneno,
+                                       String password,
+                                       int role, String state, String city);
+
+    Observable<UserResponse> getUser();
+
+    Observable<CityWrapper> getCities(String state);
+
+    Observable<UserResponse> sendOTP(String access_token, String otp);
+
+    Observable<UserResponse> resendOTP(String access_token);
+
+
+    Observable<UserResponse> setPatientCategory(String accessToken, String gender,
+                                                String dob,
+                                                String bloodgroup);
+
+    Observable<UserResponse> setHospitalCategory(String accessToken, String haddress,
+                                                 String hcity,
+                                                 String hpincode,
+                                                 String hstate);
+
+    Observable<HomeWrapper> getHomeData(String accessToken);
+
+
+    Observable<UserResponse> setLogin(String fcm_token, String phoneno, String password);
+    Observable<UserResponse> logout(String accessToken);
+
+
+}
