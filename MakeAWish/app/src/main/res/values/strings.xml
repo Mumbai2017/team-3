@@ -39,4 +39,24 @@
         <item>Mumbai</item>
     </string-array>
 
+    <string name="dateofadm">Dt. Of Admn.</string>
+    <string name="dateidf">Dt. Identified</string>
+    <string name="granted">Whether wish granted earlier.(Yes/No)</string>
+    <string name="wish">Wish identified(As expressed by child)</string>
+    <string name="dateoffulfillment">Proposed Date of wish fulfillment:</string>
+    <string name="rushwish">Rush wish? (Yes/No)</string>
+    <string name="wish1">Wish 1</string>
+    <string name="wish2">Wish 2</string>
+    <string name="wish3">Wish 3</string>
+
+    <string-array name="wishtypes">
+        <item>Select Wish type</item>
+        <item>I want to meet</item>
+        <item>I want to be</item>
+        <item>I want to have</item>
+        <item>I want to go to</item>
+    </string-array>
+
+
+
 </resources>
