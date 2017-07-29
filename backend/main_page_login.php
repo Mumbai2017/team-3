@@ -30,8 +30,13 @@ require 'db_connect.php';
     		$role = $row['role'];
 
     		if ($role == 'volunteer')  {
-    			
-    			echo "volunteer";
+    			$SQL = "SELECT uid from user where uemail = '$uemail' and pwd = '$pwd' ";
+    			$result = mysqli_query($conn,$SQL);
+    			$row = mysqli_fetch_array($result);
+    			$uid = $row['uid'];
+    			$x = array("uid"=> $uid, "role"=>$role);
+          		echo json_encode($x);
+    			//echo "volunteer";
     		// $x = array("uid"=>, "message"=>"Oops! User does not exist.");
       		// echo json_encode($x);
     		}

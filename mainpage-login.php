@@ -18,8 +18,7 @@
         }
     	else {
     	   $SQL = "SELECT role from user where uemail = '$uemail' and pwd = '$pwd' ";
-           $role = $row['role'];
-    	   $result = mysqli_query($conn,$SQL);
+           
     	   if ($role == 'volunteer')  {
     		  header: ' Location: volunteer-login.php ';
     	   }
