@@ -1,0 +1,22 @@
+{
+  "name": "dbcon",
+  "version": "1.0.0",
+  "description": "Connect to database",
+  "main": "contactApp.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mumbai2017/team-3.git"
+  },
+  "keywords": [
+    "db"
+  ],
+  "author": "devika",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mumbai2017/team-3/issues"
+  },
+  "homepage": "https://github.com/Mumbai2017/team-3#readme"
+}

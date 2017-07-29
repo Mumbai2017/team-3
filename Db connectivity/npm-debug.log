@@ -1,0 +1,167 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\node.exe',
+1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install',
+1 verbose cli   'Db',
+1 verbose cli   'connectivity' ]
+2 info using npm@4.1.2
+3 info using node@v7.7.4
+4 silly loadCurrentTree Starting
+5 silly install loadCurrentTree
+6 silly install readLocalPackageData
+7 silly fetchPackageMetaData Db
+8 silly fetchPackageMetaData connectivity
+9 silly fetchNamedPackageData Db
+10 silly mapToRegistry name Db
+11 silly mapToRegistry using default registry
+12 silly mapToRegistry registry https://registry.npmjs.org/
+13 silly mapToRegistry data Result {
+13 silly mapToRegistry   raw: 'Db',
+13 silly mapToRegistry   scope: null,
+13 silly mapToRegistry   escapedName: 'Db',
+13 silly mapToRegistry   name: 'Db',
+13 silly mapToRegistry   rawSpec: '',
+13 silly mapToRegistry   spec: 'latest',
+13 silly mapToRegistry   type: 'tag' }
+14 silly mapToRegistry uri https://registry.npmjs.org/Db
+15 silly fetchNamedPackageData connectivity
+16 silly mapToRegistry name connectivity
+17 silly mapToRegistry using default registry
+18 silly mapToRegistry registry https://registry.npmjs.org/
+19 silly mapToRegistry data Result {
+19 silly mapToRegistry   raw: 'connectivity',
+19 silly mapToRegistry   scope: null,
+19 silly mapToRegistry   escapedName: 'connectivity',
+19 silly mapToRegistry   name: 'connectivity',
+19 silly mapToRegistry   rawSpec: '',
+19 silly mapToRegistry   spec: 'latest',
+19 silly mapToRegistry   type: 'tag' }
+20 silly mapToRegistry uri https://registry.npmjs.org/connectivity
+21 verbose request uri https://registry.npmjs.org/Db
+22 verbose request no auth needed
+23 info attempt registry request try #1 at 6:21:53 PM
+24 verbose request id b7d79701ae7822ec
+25 http request GET https://registry.npmjs.org/Db
+26 verbose request uri https://registry.npmjs.org/connectivity
+27 verbose request no auth needed
+28 info attempt registry request try #1 at 6:21:53 PM
+29 http request GET https://registry.npmjs.org/connectivity
+30 http 200 https://registry.npmjs.org/connectivity
+31 verbose headers { server: 'nginx/1.10.3',
+31 verbose headers   'content-type': 'application/json',
+31 verbose headers   'last-modified': 'Wed, 08 Mar 2017 22:15:09 GMT',
+31 verbose headers   etag: 'W/"58c0826d-192e"',
+31 verbose headers   'content-encoding': 'gzip',
+31 verbose headers   'cache-control': 'max-age=300',
+31 verbose headers   'content-length': '1500',
+31 verbose headers   'accept-ranges': 'bytes',
+31 verbose headers   date: 'Sat, 29 Jul 2017 12:52:01 GMT',
+31 verbose headers   via: '1.1 varnish',
+31 verbose headers   age: '0',
+31 verbose headers   connection: 'keep-alive',
+31 verbose headers   'x-served-by': 'cache-sin18035-SIN',
+31 verbose headers   'x-cache': 'MISS',
+31 verbose headers   'x-cache-hits': '0',
+31 verbose headers   'x-timer': 'S1501332721.017996,VS0,VE156',
+31 verbose headers   vary: 'Accept-Encoding, Accept' }
+32 silly get cb [ 200,
+32 silly get   { server: 'nginx/1.10.3',
+32 silly get     'content-type': 'application/json',
+32 silly get     'last-modified': 'Wed, 08 Mar 2017 22:15:09 GMT',
+32 silly get     etag: 'W/"58c0826d-192e"',
+32 silly get     'content-encoding': 'gzip',
+32 silly get     'cache-control': 'max-age=300',
+32 silly get     'content-length': '1500',
+32 silly get     'accept-ranges': 'bytes',
+32 silly get     date: 'Sat, 29 Jul 2017 12:52:01 GMT',
+32 silly get     via: '1.1 varnish',
+32 silly get     age: '0',
+32 silly get     connection: 'keep-alive',
+32 silly get     'x-served-by': 'cache-sin18035-SIN',
+32 silly get     'x-cache': 'MISS',
+32 silly get     'x-cache-hits': '0',
+32 silly get     'x-timer': 'S1501332721.017996,VS0,VE156',
+32 silly get     vary: 'Accept-Encoding, Accept' } ]
+33 verbose get saving connectivity to C:\Users\Devika\AppData\Roaming\npm-cache\registry.npmjs.org\connectivity\.cache.json
+34 verbose correctMkdir C:\Users\Devika\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+35 http 404 https://registry.npmjs.org/Db
+36 verbose headers { 'content-type': 'application/json',
+36 verbose headers   'cache-control': 'max-age=0',
+36 verbose headers   'content-length': '2',
+36 verbose headers   'accept-ranges': 'bytes',
+36 verbose headers   date: 'Sat, 29 Jul 2017 12:52:02 GMT',
+36 verbose headers   via: '1.1 varnish',
+36 verbose headers   age: '0',
+36 verbose headers   connection: 'keep-alive',
+36 verbose headers   'x-served-by': 'cache-sin18032-SIN',
+36 verbose headers   'x-cache': 'MISS',
+36 verbose headers   'x-cache-hits': '0',
+36 verbose headers   'x-timer': 'S1501332721.008462,VS0,VE1047',
+36 verbose headers   vary: 'Accept-Encoding' }
+37 silly get cb [ 404,
+37 silly get   { 'content-type': 'application/json',
+37 silly get     'cache-control': 'max-age=0',
+37 silly get     'content-length': '2',
+37 silly get     'accept-ranges': 'bytes',
+37 silly get     date: 'Sat, 29 Jul 2017 12:52:02 GMT',
+37 silly get     via: '1.1 varnish',
+37 silly get     age: '0',
+37 silly get     connection: 'keep-alive',
+37 silly get     'x-served-by': 'cache-sin18032-SIN',
+37 silly get     'x-cache': 'MISS',
+37 silly get     'x-cache-hits': '0',
+37 silly get     'x-timer': 'S1501332721.008462,VS0,VE1047',
+37 silly get     vary: 'Accept-Encoding' } ]
+38 silly fetchPackageMetaData Error: Registry returned 404 for GET on https://registry.npmjs.org/Db
+38 silly fetchPackageMetaData     at makeError (C:\Program Files\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:304:12)
+38 silly fetchPackageMetaData     at CachingRegistryClient.<anonymous> (C:\Program Files\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:282:14)
+38 silly fetchPackageMetaData     at Request._callback (C:\Program Files\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:212:14)
+38 silly fetchPackageMetaData     at Request.self.callback (C:\Program Files\nodejs\node_modules\npm\node_modules\request\request.js:186:22)
+38 silly fetchPackageMetaData     at emitTwo (events.js:106:13)
+38 silly fetchPackageMetaData     at Request.emit (events.js:194:7)
+38 silly fetchPackageMetaData     at Request.<anonymous> (C:\Program Files\nodejs\node_modules\npm\node_modules\request\request.js:1081:10)
+38 silly fetchPackageMetaData     at emitOne (events.js:96:13)
+38 silly fetchPackageMetaData     at Request.emit (events.js:191:7)
+38 silly fetchPackageMetaData     at IncomingMessage.<anonymous> (C:\Program Files\nodejs\node_modules\npm\node_modules\request\request.js:1001:12)
+38 silly fetchPackageMetaData  error for Db { Error: Registry returned 404 for GET on https://registry.npmjs.org/Db
+38 silly fetchPackageMetaData     at makeError (C:\Program Files\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:304:12)
+38 silly fetchPackageMetaData     at CachingRegistryClient.<anonymous> (C:\Program Files\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:282:14)
+38 silly fetchPackageMetaData     at Request._callback (C:\Program Files\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:212:14)
+38 silly fetchPackageMetaData     at Request.self.callback (C:\Program Files\nodejs\node_modules\npm\node_modules\request\request.js:186:22)
+38 silly fetchPackageMetaData     at emitTwo (events.js:106:13)
+38 silly fetchPackageMetaData     at Request.emit (events.js:194:7)
+38 silly fetchPackageMetaData     at Request.<anonymous> (C:\Program Files\nodejs\node_modules\npm\node_modules\request\request.js:1081:10)
+38 silly fetchPackageMetaData     at emitOne (events.js:96:13)
+38 silly fetchPackageMetaData     at Request.emit (events.js:191:7)
+38 silly fetchPackageMetaData     at IncomingMessage.<anonymous> (C:\Program Files\nodejs\node_modules\npm\node_modules\request\request.js:1001:12) pkgid: 'Db', statusCode: 404, code: 'E404' }
+39 silly rollbackFailedOptional Starting
+40 silly rollbackFailedOptional Finishing
+41 silly runTopLevelLifecycles Finishing
+42 silly install printInstalled
+43 verbose stack Error: Registry returned 404 for GET on https://registry.npmjs.org/Db
+43 verbose stack     at makeError (C:\Program Files\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:304:12)
+43 verbose stack     at CachingRegistryClient.<anonymous> (C:\Program Files\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:282:14)
+43 verbose stack     at Request._callback (C:\Program Files\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:212:14)
+43 verbose stack     at Request.self.callback (C:\Program Files\nodejs\node_modules\npm\node_modules\request\request.js:186:22)
+43 verbose stack     at emitTwo (events.js:106:13)
+43 verbose stack     at Request.emit (events.js:194:7)
+43 verbose stack     at Request.<anonymous> (C:\Program Files\nodejs\node_modules\npm\node_modules\request\request.js:1081:10)
+43 verbose stack     at emitOne (events.js:96:13)
+43 verbose stack     at Request.emit (events.js:191:7)
+43 verbose stack     at IncomingMessage.<anonymous> (C:\Program Files\nodejs\node_modules\npm\node_modules\request\request.js:1001:12)
+44 verbose statusCode 404
+45 verbose pkgid Db
+46 verbose cwd C:\Users\Devika\cfg\team-3\Db connectivity
+47 error Windows_NT 10.0.15063
+48 error argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "Db" "connectivity"
+49 error node v7.7.4
+50 error npm  v4.1.2
+51 error code E404
+52 error 404 Registry returned 404 for GET on https://registry.npmjs.org/Db
+53 error 404
+54 error 404 'Db' is not in the npm registry.
+55 error 404 Your package name is not valid, because
+56 error 404 1. name can no longer contain capital letters
+57 error 404 Note that you can also install from a
+58 error 404 tarball, folder, http url, or git url.
+59 verbose exit [ 1, true ]
