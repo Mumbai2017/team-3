@@ -15,6 +15,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
  * Created by Archish on 7/29/2017.
  */
 
+@Singleton
 @Component(modules = AppModule.class)
 public interface AppComponent {
     VolunteerRepository volunteerRepository();

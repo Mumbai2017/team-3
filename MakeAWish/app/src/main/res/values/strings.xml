@@ -7,5 +7,8 @@
     <!-- Custom Fonts -->
     <string name="font_name_montserrat">montserrat</string>
     <string name="font_name_montserrat_bold">montserrat_bold</string>
+    <string name="login">Login</string>
+    <string name="password">Password</string>
+    <string name="emailid">EmailID</string>
 
 </resources>
