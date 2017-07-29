@@ -24,8 +24,9 @@ public class VolunteerSignupPresenter implements VolunteerSignupContracts.Volunt
 
     @Override
     public void fetchData(String fullname, String mobileno, String info, String sPrefLoc, String emailid, String want, String password) {
-        volunteerRepository.fetchData(fullname, mobileno, info, sPrefLoc, emailid, want, password).observeOn(AndroidSchedulers.mainThread())
-                .subscribeOn(Schedulers.newThread())
+        volunteerRepository.fetchData(fullname, mobileno, info, sPrefLoc, emailid, want, password)
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(Schedulers.io())
                 .subscribe(new Observer<Success>() {
                     @Override
                     public void onCompleted() {
@@ -34,8 +35,12 @@ public class VolunteerSignupPresenter implements VolunteerSignupContracts.Volunt
 
                     @Override
                     public void onError(Throwable e) {
-                        if (view != null)
+                        if (view != null){
+                            e.printStackTrace();
                             view.onNetworkException(e);
+
+                        }
+
                     }
 
                     @Override

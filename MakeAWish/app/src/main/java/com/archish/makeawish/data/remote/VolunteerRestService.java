@@ -14,7 +14,8 @@ import rx.Observable;
  */
 
 public interface VolunteerRestService {
+
     @FormUrlEncoded
-    @POST("volunteer_signup.php")
-    Observable<Success> fetchData(@Field("vname") String fullname, @Field("vcontact") String mobileno, @Field("vname") String info, @Field("reference") String sPrefLoc, @Field("emailid") String emailid, @Field("want") String want, @Field("password") String password);
+    @POST("/backend/volunteer/volunteer_signup.php")
+    Observable<Success> fetchData(@Field("vname") String fullname, @Field("vcontact") String mobileno, @Field("reference") String info, @Field("prefloc") String sPrefLoc, @Field("vemail") String emailid, @Field("reason") String want, @Field("password") String password);
 }

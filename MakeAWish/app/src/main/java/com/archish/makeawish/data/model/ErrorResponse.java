@@ -5,6 +5,6 @@ package com.archish.makeawish.data.model;
  */
 
 public class ErrorResponse {
-    public int status_code;
+    public boolean status;
     public String message;
 }

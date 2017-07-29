@@ -15,7 +15,6 @@ import android.widget.Toast;
 import com.archish.makeawish.MainActivity;
 import com.archish.makeawish.R;
 import com.archish.makeawish.common.BaseActivity;
-import com.archish.makeawish.common.MakeAWishApp;
 import com.archish.makeawish.data.local.SharedPreferenceManager;
 import com.archish.makeawish.data.model.UserResponse;
 import com.archish.makeawish.data.repository.UserRepository;
@@ -58,15 +57,14 @@ public class LoginActivity extends BaseActivity implements LoginContract.LoginVi
         }
         setContentView(R.layout.activity_login);
         initViews();
-        UserRepository userRepository = ((MakeAWishApp) getApplication()).getComponent().userRepository();
-        loginPresenter = new LoginPresenter(userRepository, this);
+
         bLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 boolean status = validate();
                 if (status) {
                     showProgressDialog();
-                    loginPresenter.login(new SharedPreferenceManager(getApplicationContext()).getDeviceToken(), etEmailid.getText().toString(), etPassword.getText().toString());
+        //            loginPresenter.login(new SharedPreferenceManager(getApplicationContext()).getDeviceToken(), etEmailid.getText().toString(), etPassword.getText().toString());
                 }
             }
         });

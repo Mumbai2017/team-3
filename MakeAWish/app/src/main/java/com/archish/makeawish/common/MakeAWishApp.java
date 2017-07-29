@@ -1,5 +1,10 @@
 package com.archish.makeawish.common;
 
+/**
+ * Created by Archish on 7/30/2017.
+ */
+
+import android.app.Application;
 import android.app.Application;
 
 import com.archish.makeawish.di.AppComponent;
@@ -15,10 +20,11 @@ public class MakeAWishApp extends Application {
         super.onCreate();
         initCompontent();
     }
-    private void initCompontent()
-    {
+
+    private void initCompontent() {
         component = DaggerAppComponent.builder().appModule(new AppModule()).build();
     }
+
     public AppComponent getComponent() {
         return component;
     }

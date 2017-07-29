@@ -5,6 +5,6 @@ package com.archish.makeawish.common;
  */
 
 public class Config {
-    public static String BASE_URL = "http://ebazzar.esy.es/";
-    public static String MEDIA = "http://ebazzar.esy.es/upload/";
+    public static String BASE_URL = "http://54.255.246.22/backend/";
+    public static String MEDIA = "http://54.255.246.22/upload/";
 }

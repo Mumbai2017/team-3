@@ -59,10 +59,9 @@ public class BaseActivity extends AppCompatActivity implements BaseContract.Base
     }
 
     protected void handleHTTPErrorByStatusCode(ErrorResponse errorResponse) {
-        switch (errorResponse.status_code) {
-            default:
-                Toast.makeText(this, errorResponse.message, Toast.LENGTH_SHORT).show();
-                break;
+        {
+            Toast.makeText(this, errorResponse.message, Toast.LENGTH_SHORT).show();
+
         }
     }
 
@@ -74,7 +73,8 @@ public class BaseActivity extends AppCompatActivity implements BaseContract.Base
 
     protected void accessTokenInvalidError() {
         /*SharedPreferencesManager.getInstance(this).setLoginStatus(false);
-        SharedPreferencesManager.getInstance(this).setAccessToken(null);
+        SharedPreferencesManager.getIns
+        tance(this).setAccessToken(null);
         Intent in = new Intent(this, LoginActivity.class);
         in.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(in);*/

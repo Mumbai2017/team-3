@@ -17,9 +17,6 @@ import com.archish.makeawish.auth.LoginActivity;
 import com.archish.makeawish.auth.LoginContract;
 import com.archish.makeawish.auth.LoginPresenter;
 import com.archish.makeawish.common.BaseActivity;
-import com.archish.makeawish.common.Config;
-import com.archish.makeawish.common.CustomFontLoader;
-import com.archish.makeawish.common.MakeAWishApp;
 import com.archish.makeawish.dashboard.HomeFragment;
 import com.archish.makeawish.data.local.SharedPreferenceManager;
 import com.archish.makeawish.data.model.UserResponse;
@@ -52,9 +49,7 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         if (id == R.id.logout) {
-            UserRepository userRepository = ((MakeAWishApp) getApplication()).getComponent().userRepository();
-            LoginPresenter loginPresenter = new LoginPresenter(userRepository, this);
-            loginPresenter.logout(new SharedPreferenceManager(getApplicationContext()).getAccessToken());
+            //loginPresenter.logout(new SharedPreferenceManager(getApplicationContext()).getAccessToken());
             showProgressDialog();
         }
         return super.onOptionsItemSelected(item);

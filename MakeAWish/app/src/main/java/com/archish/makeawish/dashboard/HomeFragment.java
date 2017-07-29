@@ -14,7 +14,6 @@ import android.view.ViewGroup;
 import android.widget.ProgressBar;
 
 import com.archish.makeawish.R;
-import com.archish.makeawish.common.MakeAWishApp;
 import com.archish.makeawish.data.local.SharedPreferenceManager;
 import com.archish.makeawish.data.model.Home;
 import com.archish.makeawish.data.model.HomeWrapper;
@@ -37,13 +36,11 @@ public class HomeFragment extends Fragment implements HomeContract.HomeView, Hom
         swipeRefreshLayout = (SwipeRefreshLayout) view.findViewById(R.id.srlHome);
         rvHome.setHasFixedSize(true);
         rvHome.setLayoutManager(new LinearLayoutManager(getActivity().getApplicationContext(), LinearLayoutManager.VERTICAL, false));
-        UserRepository userRepository = ((MakeAWishApp) getActivity().getApplication()).getComponent().userRepository();
-        homePresenter = new HomePresenter(userRepository, this);
         homePresenter.fetchHomeData(new SharedPreferenceManager(getActivity().getApplicationContext()).getAccessToken());
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                homePresenter.fetchHomeData(new SharedPreferenceManager(getActivity().getApplicationContext()).getAccessToken());
+                //        homePresenter.fetchHomeData(new SharedPreferenceManager(getActivity().getApplicationContext()).getAccessToken());
             }
         });
         return view;
@@ -61,7 +58,7 @@ public class HomeFragment extends Fragment implements HomeContract.HomeView, Hom
         }
         HomeAdapter homeAdapter = new HomeAdapter(homes, this);
         rvHome.setAdapter(homeAdapter);
-        if(swipeRefreshLayout.isRefreshing())
+        if (swipeRefreshLayout.isRefreshing())
             swipeRefreshLayout.setRefreshing(false);
         pgProgress.setVisibility(View.GONE);
     }
