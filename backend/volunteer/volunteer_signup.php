@@ -1,16 +1,16 @@
 <?PHP
 require '../db_connect.php';
 
-
+if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 	// $vid = $_POST['vid'];
 	// $vname = $_POST['vname']
 	// $vcontact = $_POST['vcontact'];
 	// $vaddress = $_POST['vaddress'];
 	// $vcategory = $_POST['vcategory'];
-	// $vemail = $_POST['vemail'];
-	// $reference = $_POST['reference'];
-	// $reason = $_POST['reason'];
-	// $prefloc = $_POST['prefloc'];
+	$vemail = $_POST['vemail'];
+	$reference = $_POST['reference'];
+	$reason = $_POST['reason'];
+	$prefloc = $_POST['prefloc'];
 	// $otherloc = $_POST['otherloc'];
 	// $password = $_POST['password'];
 
@@ -18,15 +18,13 @@ require '../db_connect.php';
 	$vname = "Shraddha";
 	$vcontact = 9773919892;
 	$vaddress = "Mumbai,India";
-	$vcategory = 1;
+	$vcategory = "abc";
 	$vemail = "shraddha.mak1911@gmail.com";
-	$reference = 1;
+	$reference = "abc.com";
 	$reason = "xyz";
-	$prefloc = 1;
+	$prefloc = "Mumbai";
 	$otherloc = "";
 	$password = "12345";
-
-
 
 
 
@@ -35,24 +33,19 @@ require '../db_connect.php';
             $num_rows = mysqli_num_rows($result);
 
             if ($num_rows > 0) {
-            	$x = array("success"=>false, "message"=>"Oops! Volunteer Already exists.");
-            	echo json_encode($x);
+                $errorMessage = "Username already taken";
             } else {
 
                 $SQL = "INSERT INTO volunteer (vcontact, vaddress, vcategory, vemail, reference, reason, prefloc, otherloc) VALUES ($vcontact, '$vaddress',$vcategory, '$vemail', $reference, '$reason', $prefloc, '$otherloc')";
 
 				$result = mysqli_query($conn, $SQL);
-				if($result == TRUE)
-					{
-									$x = array("success"=>true, "message"=>"Successfully Signed Up.");					
-					echo json_encode($x);
-				}else{
-	            	$x = array("success"=>false, "message"=>"Oops! Volunteer Already exists.");
-	            	echo json_encode($x);
-				}
+
+
                 mysqli_close($conn);
-               
-                }
-   
+               	$errorMessage = "";
+                //header("Location: login.php");
+            }
+	
+}
 
 ?>
