@@ -11,5 +11,6 @@
     <string name="password">Password</string>
     <string name="emailid">EmailID</string>
     <string name="volunteer">Volunteer</string>
+    <string name="donor">Donor</string>
 
 </resources>
