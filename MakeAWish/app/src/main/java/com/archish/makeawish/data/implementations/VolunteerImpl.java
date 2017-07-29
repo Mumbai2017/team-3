@@ -18,6 +18,10 @@ public class VolunteerImpl implements VolunteerRepository {
     }
 
 
+    @Override
+    public Observable<Success> getData(String q) {
+        return volunteerService.getData(q);
+    }
 
     @Override
     public Observable<Success> fetchData(String fullname, String mobileno, String info, String sPrefLoc, String emailid, String want, String password) {

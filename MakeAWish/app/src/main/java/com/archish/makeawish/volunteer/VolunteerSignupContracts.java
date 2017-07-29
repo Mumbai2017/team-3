@@ -14,5 +14,6 @@ public interface VolunteerSignupContracts {
 
     interface VolunteerSignupPresenter {
         void fetchData(String fullname,String mobileno, String info, String sPrefLoc, String emailid, String want,String password);
+        void getData(String q);
     }
 }

@@ -7,6 +7,7 @@ import android.support.v7.widget.AppCompatSpinner;
 import android.view.View;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 
 import com.archish.makeawish.R;
 import com.archish.makeawish.common.BaseActivity;
@@ -47,22 +48,21 @@ public class VolunteerSignupActivity extends BaseActivity implements VolunteerSi
         appCompatSpinner = (AppCompatSpinner) findViewById(R.id.sPrefLoc);
         etWant = (BaseEditText) findViewById(R.id.etWant);
         bSubmit = (BaseButton) findViewById(R.id.bSubmit);
-        bSubmit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                int selectedId = tvInfo.getCheckedRadioButtonId();
-
-                RadioButton radioButton = (RadioButton) findViewById(selectedId);
-                volunteerSignupPresenter.fetchData(etFullName.getText().toString(), etMobile.getText().toString()
-                        , radioButton.getText().toString(), String.valueOf(appCompatSpinner.getSelectedItemPosition() + 1), etEmailid.getText().toString(), etWant.getText().toString(), etPassword.getText().toString());
-            }
-        });
+        volunteerSignupPresenter.getData("Hello");
+//        bSubmit.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                int selectedId = tvInfo.getCheckedRadioButtonId();
+//                RadioButton radioButton = (RadioButton) findViewById(selectedId);
+//                volunteerSignupPresenter.fetchData(etFullName.getText().toString(), etMobile.getText().toString()
+//                        , radioButton.getText().toString(), String.valueOf(appCompatSpinner.getSelectedItemPosition() + 1), etEmailid.getText().toString(), etWant.getText().toString(), etPassword.getText().toString());
+//            }
+//        });
     }
-
 
 
     @Override
     public void onData(Success success) {
-
+        Toast.makeText(VolunteerSignupActivity.this, "Called", Toast.LENGTH_SHORT).show();
     }
 }

@@ -17,20 +17,6 @@ public class UserRepositoryImpl implements UserRepository {
     }
 
 
-    @Override
-    public Observable<UserResponse> setUser(String fcm_token, String fname, String lname, String emailid, String phoneno, String password, int role) {
-        return null;
-    }
-
-    @Override
-    public Observable<UserResponse> getUser() {
-        return null;
-    }
-
-    @Override
-    public Observable<HomeWrapper> getHomeData(String accessToken) {
-        return null;
-    }
 
     @Override
     public Observable<UserResponse> setLogin(String fcm_token, String phoneno, String password) {

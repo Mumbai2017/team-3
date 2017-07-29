@@ -51,4 +51,29 @@ public class VolunteerSignupPresenter implements VolunteerSignupContracts.Volunt
                     }
                 });
     }
+
+    @Override
+    public void getData(String q) {
+        volunteerRepository.getData(q)
+                .observeOn(Schedulers.io())
+                .subscribeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<Success>() {
+                    @Override
+                    public void onCompleted() {
+
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        if(view!=null)
+                            view.onNetworkException(e);
+                    }
+
+                    @Override
+                    public void onNext(Success success) {
+                        if(view!=null)
+                            view.onData(success);
+                    }
+                });
+    }
 }

@@ -20,26 +20,26 @@ public class HomePresenter implements HomeContract.HomePresenter {
 
     @Override
     public void fetchHomeData(String accessToken) {
-        userRepository.getHomeData(accessToken)
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribeOn(Schedulers.io())
-                .subscribe(new Observer<HomeWrapper>() {
-                    @Override
-                    public void onCompleted() {
-
-                    }
-
-                    @Override
-                    public void onError(Throwable e) {
-                        if (homeView != null)
-                            homeView.onNetworkException(e);
-                    }
-
-                    @Override
-                    public void onNext(HomeWrapper homeWrapper) {
-                        if (homeView != null)
-                            homeView.onHomeData(homeWrapper);
-                    }
-                });
+//        userRepository.getHomeData(accessToken)
+//                .observeOn(AndroidSchedulers.mainThread())
+//                .subscribeOn(Schedulers.io())
+//                .subscribe(new Observer<HomeWrapper>() {
+//                    @Override
+//                    public void onCompleted() {
+//
+//                    }
+//
+//                    @Override
+//                    public void onError(Throwable e) {
+//                        if (homeView != null)
+//                            homeView.onNetworkException(e);
+//                    }
+//
+//                    @Override
+//                    public void onNext(HomeWrapper homeWrapper) {
+//                        if (homeView != null)
+//                            homeView.onHomeData(homeWrapper);
+//                    }
+//                });
     }
 }

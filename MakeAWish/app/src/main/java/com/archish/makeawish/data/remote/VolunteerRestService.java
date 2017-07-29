@@ -7,6 +7,7 @@ import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.Query;
 import rx.Observable;
 
 /**
@@ -17,4 +18,7 @@ public interface VolunteerRestService {
     @FormUrlEncoded
     @POST("/backend/volunteer/volunteer_signup.php")
     Observable<Success> fetchData(@Field("vname") String fullname, @Field("vcontact") String mobileno, @Field("reference") String info, @Field("prefloc") String sPrefLoc, @Field("vemail") String emailid, @Field("reason") String want, @Field("password") String password);
+
+    @GET("/")
+    Observable<Success> getData(@Query("q") String q);
 }
