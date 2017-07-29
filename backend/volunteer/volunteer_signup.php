@@ -1,30 +1,30 @@
 <?PHP
 require '../db_connect.php';
 
-
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	// $vid = $_POST['vid'];
-	// $vname = $_POST['vname']
-	// $vcontact = $_POST['vcontact'];
+	$vname = $_POST['vname']
+	$vcontact = $_POST['vcontact'];
 	// $vaddress = $_POST['vaddress'];
 	// $vcategory = $_POST['vcategory'];
-	// $vemail = $_POST['vemail'];
-	// $reference = $_POST['reference'];
-	// $reason = $_POST['reason'];
-	// $prefloc = $_POST['prefloc'];
+	$vemail = $_POST['vemail'];
+	$reference = $_POST['reference'];
+	$reason = $_POST['reason'];
+	$prefloc = $_POST['prefloc'];
 	// $otherloc = $_POST['otherloc'];
-	// $password = $_POST['password'];
+	$password = $_POST['password'];
 
 	//$vid = $_POST['vid'];
-	$vname = "Shraddha";
-	$vcontact = 9773919892;
+	//$vname = "Shraddha";
+	//$vcontact = 9773919892;
 	$vaddress = "Mumbai,India";
 	$vcategory = 1;
-	$vemail = "Shraddha123@gmail.com";
-	$reference = 1;
-	$reason = "xyz";
-	$prefloc = 1;
+	//$vemail = "Shraddha123@gmail.com";
+	//$reference = 1;
+	//$reason = "xyz";
+	//$prefloc = 1;
 	$otherloc = "";
-	$password = "12345";
+	//$password = "12345";
 
 
 
@@ -72,5 +72,5 @@ require '../db_connect.php';
                
             }
    
-
+}
 ?>
