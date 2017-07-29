@@ -3,122 +3,148 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
 
-        <LinearLayout
+        <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="16dp">
+            android:layout_height="wrap_content">
 
-            <android.support.design.widget.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <com.archish.makeawish.ui.widgets.BaseEditText
-                    android:id="@+id/etDateOfAdm"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/dateofadm" />
-            </android.support.design.widget.TextInputLayout>
-
-            <android.support.design.widget.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <com.archish.makeawish.ui.widgets.BaseEditText
-                    android:id="@+id/etDateIden"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/dateidf" />
-            </android.support.design.widget.TextInputLayout>
-
-            <android.support.design.widget.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <com.archish.makeawish.ui.widgets.BaseEditText
-                    android:id="@+id/etWishGranted"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/granted" />
-            </android.support.design.widget.TextInputLayout>
-            <android.support.design.widget.TextInputLayout
+            <com.archish.makeawish.ui.widgets.BaseEditText
+                android:id="@+id/etDateOfAdm"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="6dp">
+                android:hint="@string/dateofadm" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.archish.makeawish.ui.widgets.BaseEditText
+                android:id="@+id/etDateIden"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/dateidf" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.archish.makeawish.ui.widgets.BaseEditText
+                android:id="@+id/etWishGranted"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/granted" />
+        </android.support.design.widget.TextInputLayout>
+
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="6dp">
 
             <com.archish.makeawish.ui.widgets.BaseTextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="@string/wish" />
 
-            </android.support.design.widget.TextInputLayout>
-            <android.support.design.widget.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+        </android.support.design.widget.TextInputLayout>
 
-                <com.archish.makeawish.ui.widgets.BaseEditText
-                    android:id="@+id/etWish1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/wish1" />
-            </android.support.design.widget.TextInputLayout>
+        <android.support.v7.widget.AppCompatSpinner
+            android:id="@+id/spinnerw1"
+            style="@style/SecondaryText"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:entries="@array/wishtypes">
 
-            <android.support.design.widget.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+        </android.support.v7.widget.AppCompatSpinner>
 
-                <com.archish.makeawish.ui.widgets.BaseEditText
-                    android:id="@+id/etWish2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/wish2" />
-            </android.support.design.widget.TextInputLayout>
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-            <android.support.design.widget.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <com.archish.makeawish.ui.widgets.BaseEditText
-                    android:id="@+id/etWish3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/wish3" />
-            </android.support.design.widget.TextInputLayout>
-
-            <android.support.design.widget.TextInputLayout
+            <com.archish.makeawish.ui.widgets.BaseEditText
+                android:id="@+id/etWish1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="6dp">
+                android:hint="@string/wish1" />
 
-                <com.archish.makeawish.ui.widgets.BaseTextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:text="@string/dateoffulfillment" />
-            </android.support.design.widget.TextInputLayout>
-
-            <android.support.design.widget.TextInputLayout
+            <android.support.v7.widget.AppCompatSpinner
+                android:id="@+id/spinnerw3"
+                style="@style/SecondaryText"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:entries="@array/wishtypes">
 
-                <com.archish.makeawish.ui.widgets.BaseEditText
-                    android:id="@+id/etRush"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/rushwish" />
-            </android.support.design.widget.TextInputLayout>
+            </android.support.v7.widget.AppCompatSpinner>
+        </android.support.design.widget.TextInputLayout>
 
-            <com.archish.makeawish.ui.widgets.BaseButton
-                android:id="@+id/bSubmit"
-                android:layout_width="wrap_content"
+        <android.support.v7.widget.AppCompatSpinner
+            android:id="@+id/spinnerw2"
+            style="@style/SecondaryText"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:entries="@array/wishtypes">
+
+        </android.support.v7.widget.AppCompatSpinner>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.archish.makeawish.ui.widgets.BaseEditText
+                android:id="@+id/etWish2"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="Submit"
-                style="@style/BaseButton"/>
-        </LinearLayout>
+                android:hint="@string/wish2" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.archish.makeawish.ui.widgets.BaseEditText
+                android:id="@+id/etRush"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/rushwish" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.archish.makeawish.ui.widgets.BaseEditText
+                android:id="@+id/etWish3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/wish3" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="6dp">
+
+            <com.archish.makeawish.ui.widgets.BaseTextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/dateoffulfillment" />
+        </android.support.design.widget.TextInputLayout>
+
+        <com.archish.makeawish.ui.widgets.BaseButton
+            android:id="@+id/bSubmit"
+            style="@style/BaseButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Submit" />
     </LinearLayout>
 </ScrollView>
