@@ -1,11 +1,8 @@
 package com.archish.makeawish.dashboard;
 
-import com.markdevelopers.rakshak.common.BaseContract;
-import com.markdevelopers.rakshak.data.remote.models.HomeWrapper;
 
-/**
- * Created by Archish on 1/29/2017.
- */
+import com.archish.makeawish.common.BaseContract;
+import com.archish.makeawish.data.model.HomeWrapper;
 
 public interface HomeContract {
     interface HomeView extends BaseContract.BaseView{

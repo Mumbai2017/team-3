@@ -1,6 +1,5 @@
 package com.archish.makeawish.auth;
 
-import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Build;
@@ -18,6 +17,8 @@ import com.archish.makeawish.R;
 import com.archish.makeawish.common.BaseActivity;
 import com.archish.makeawish.common.MakeAWishApp;
 import com.archish.makeawish.data.local.SharedPreferenceManager;
+import com.archish.makeawish.data.model.UserResponse;
+import com.archish.makeawish.data.repository.UserRepository;
 import com.archish.makeawish.ui.widgets.BaseButton;
 import com.archish.makeawish.ui.widgets.BaseEditText;
 import com.archish.makeawish.ui.widgets.BaseTextView;
@@ -35,10 +36,10 @@ import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
 public class LoginActivity extends BaseActivity implements LoginContract.LoginView {
 
     BaseTextView tvForgotPassword, tvCreateAccount;
-    BaseEditText etMobileNo, etPassword;
+    BaseEditText etEmailid, etPassword;
     BaseButton bLogin;
     LoginPresenter loginPresenter;
-    ProgressDialog _dialog;
+
 
     @Override
     public void onNetworkException(Throwable e) {
@@ -57,7 +58,7 @@ public class LoginActivity extends BaseActivity implements LoginContract.LoginVi
         }
         setContentView(R.layout.activity_login);
         initViews();
-        UserRepository userRepository = ((MakeAWishApp) getApplication()).getComponent().();
+        UserRepository userRepository = ((MakeAWishApp) getApplication()).getComponent().userRepository();
         loginPresenter = new LoginPresenter(userRepository, this);
         bLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -65,7 +66,7 @@ public class LoginActivity extends BaseActivity implements LoginContract.LoginVi
                 boolean status = validate();
                 if (status) {
                     showProgressDialog();
-                    loginPresenter.login(new SharedPreferenceManager(getApplicationContext()).getDeviceToken(), etMobileNo.getText().toString(), etPassword.getText().toString());
+                    loginPresenter.login(new SharedPreferenceManager(getApplicationContext()).getDeviceToken(), etEmailid.getText().toString(), etPassword.getText().toString());
                 }
             }
         });
@@ -80,7 +81,7 @@ public class LoginActivity extends BaseActivity implements LoginContract.LoginVi
     }
 
     private void initViews() {
-        etMobileNo = (BaseEditText) findViewById(R.id.etMobileNo);
+        etEmailid = (BaseEditText) findViewById(R.id.etMobileNo);
         etPassword = (BaseEditText) findViewById(R.id.etPassword);
         tvCreateAccount = (BaseTextView) findViewById(R.id.tvCreate);
         bLogin = (BaseButton) findViewById(R.id.bLogin);
@@ -108,9 +109,9 @@ public class LoginActivity extends BaseActivity implements LoginContract.LoginVi
     }
 
     private boolean validate() {
-        if (etMobileNo.getText().toString().isEmpty()) {
-            etMobileNo.setError("Mobile number cannot be empty");
-            etMobileNo.setFocusable(true);
+        if (etEmailid.getText().toString().isEmpty()) {
+            etEmailid.setError("Mobile number cannot be empty");
+            etEmailid.setFocusable(true);
             return false;
         } else if (etPassword.getText().toString().isEmpty()) {
             etPassword.setError("Password cannot be empty");

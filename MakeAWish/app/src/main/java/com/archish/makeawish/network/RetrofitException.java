@@ -9,9 +9,6 @@ import retrofit2.Converter;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 
-/**
- * Created by Archish on 2/23/2017.
- */
 public class RetrofitException extends RuntimeException {
     public static RetrofitException httpError(String url, Response response, Retrofit retrofit) {
         String message = response.code() + " " + response.message();

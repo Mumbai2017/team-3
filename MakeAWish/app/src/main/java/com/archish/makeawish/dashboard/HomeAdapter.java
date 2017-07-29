@@ -6,10 +6,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-import com.markdevelopers.rakshak.R;
-import com.markdevelopers.rakshak.common.Config;
-import com.markdevelopers.rakshak.data.remote.models.Home;
-import com.markdevelopers.rakshak.ui.widgets.BaseTextView;
+import com.archish.makeawish.R;
+import com.archish.makeawish.common.Config;
+import com.archish.makeawish.data.model.Home;
+import com.archish.makeawish.ui.widgets.BaseTextView;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -34,9 +34,9 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.NewsFeedViewHo
 
     @Override
     public HomeAdapter.NewsFeedViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.adapter_home, parent, false);
-        NewsFeedViewHolder holder = new NewsFeedViewHolder(v);
-        return holder;
+     //   View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.adapter_home, parent, false);
+//        NewsFeedViewHolder holder = new NewsFeedViewHolder(v);
+        return null;
     }
 
     @Override
@@ -62,18 +62,9 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.NewsFeedViewHo
 
         public NewsFeedViewHolder(final View itemView) {
             super(itemView);
-            tvTitle = (BaseTextView) itemView.findViewById(R.id.tvName);
-            ivImage = (ImageView) itemView.findViewById(R.id.ivImage);
-            tvDescription = (BaseTextView) itemView.findViewById(R.id.tvDescription);
-            ivShare = (ImageView) itemView.findViewById(R.id.ivShare);
-            ivShare.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    if (commander != null) {
-                        commander.onItemStatusChanged(data.get(getAdapterPosition()));
-                    }
-                }
-            });
+//            tvTitle = (BaseTextView) itemView.findViewById(R.id.tvName);
+//            ivImage = (ImageView) itemView.findViewById(R.id.ivImage);
+//            tvDescription = (BaseTextView) itemView.findViewById(R.id.tvDescription);
 
         }
 

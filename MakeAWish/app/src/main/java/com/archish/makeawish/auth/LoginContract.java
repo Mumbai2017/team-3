@@ -1,12 +1,8 @@
 package com.archish.makeawish.auth;
 
 
-import com.markdevelopers.rakshak.common.BaseContract;
-import com.markdevelopers.rakshak.data.remote.models.UserResponse;
-
-/**
- * Created by Archish on 1/13/2017.
- */
+import com.archish.makeawish.common.BaseContract;
+import com.archish.makeawish.data.model.UserResponse;
 
 public interface LoginContract {
     interface LoginView extends BaseContract.BaseView {
@@ -17,7 +13,7 @@ public interface LoginContract {
     }
 
     interface LoginPresenter {
-        void login(String fcm_token, String mobileno, String password);
+        void login(String fcm_token, String emailid, String password);
 
         void logout(String accessToken);
     }

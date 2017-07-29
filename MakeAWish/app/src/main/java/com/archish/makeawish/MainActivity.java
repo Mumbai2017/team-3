@@ -13,21 +13,18 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.markdevelopers.rakshak.assignment.AssignmentActivity;
-import com.markdevelopers.rakshak.auth.LoginActivity;
-import com.markdevelopers.rakshak.auth.LoginContract;
-import com.markdevelopers.rakshak.auth.LoginPresenter;
-import com.markdevelopers.rakshak.common.BaseActivity;
-import com.markdevelopers.rakshak.common.Config;
-import com.markdevelopers.rakshak.common.CustomFontLoader;
-import com.markdevelopers.rakshak.common.RakshakApp;
-import com.markdevelopers.rakshak.dashboard.HomeFragment;
-import com.markdevelopers.rakshak.data.local.SharedPreferenceManager;
-import com.markdevelopers.rakshak.data.remote.models.UserResponse;
-import com.markdevelopers.rakshak.data.repository.UserRepository;
-import com.markdevelopers.rakshak.news.NewsFeedActivity;
-import com.markdevelopers.rakshak.ngos.NgoActivity;
-import com.markdevelopers.rakshak.subscriptions.SubscriptionsActivity;
+import com.archish.makeawish.auth.LoginActivity;
+import com.archish.makeawish.auth.LoginContract;
+import com.archish.makeawish.auth.LoginPresenter;
+import com.archish.makeawish.common.BaseActivity;
+import com.archish.makeawish.common.Config;
+import com.archish.makeawish.common.CustomFontLoader;
+import com.archish.makeawish.common.MakeAWishApp;
+import com.archish.makeawish.dashboard.HomeFragment;
+import com.archish.makeawish.data.local.SharedPreferenceManager;
+import com.archish.makeawish.data.model.UserResponse;
+import com.archish.makeawish.data.repository.UserRepository;
+
 
 /***
  * MainActivity
@@ -55,7 +52,7 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         if (id == R.id.logout) {
-            UserRepository userRepository = ((RakshakApp) getApplication()).getComponent().userRepository();
+            UserRepository userRepository = ((MakeAWishApp) getApplication()).getComponent().userRepository();
             LoginPresenter loginPresenter = new LoginPresenter(userRepository, this);
             loginPresenter.logout(new SharedPreferenceManager(getApplicationContext()).getAccessToken());
             showProgressDialog();
@@ -82,7 +79,6 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        Config.changeFontInViewGroup(drawer, CustomFontLoader.MONTSERRAT_BOLD);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.setDrawerListener(toggle);
@@ -94,16 +90,15 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
         View headerView = navigationView.getHeaderView(0);
         TextView role = (TextView) headerView.findViewById(R.id.email);
         if (new SharedPreferenceManager(getApplicationContext()).getCategory() == 3)
-            role.setText(getString(R.string.worker));
+            role.setText(getString(R.string.volunteer));
         else if (new SharedPreferenceManager(getApplicationContext()).getCategory() == 4)
-            role.setText(getString(R.string.user));
+            role.setText(getString(R.string.donor));
 
         navigationView.setNavigationItemSelectedListener(this);
-        if (new SharedPreferenceManager(getApplicationContext()).getCategory() == 3)
-            navigationView.getMenu().findItem(R.id.nav_subscription).setVisible(false);
-        else if (new SharedPreferenceManager(getApplicationContext()).getCategory() == 4)
-            navigationView.getMenu().findItem(R.id.nav_assignment).setVisible(false);
-        Config.changeFontInViewGroup(drawer, CustomFontLoader.MONTSERRAT);
+//        if (new SharedPreferenceManager(getApplicationContext()).getCategory() == 3)
+//            navigationView.getMenu().findItem(R.id.nav_subscription).setVisible(false);
+//        else if (new SharedPreferenceManager(getApplicationContext()).getCategory() == 4)
+//            navigationView.getMenu().findItem(R.id.nav_assignment).setVisible(false);
 
 
     }
@@ -120,27 +115,7 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
                 fragmentTransaction.replace(R.id.fragment_container, fragment);
                 fragmentTransaction.commit();
                 break;
-            case R.id.nav_news:
-                Intent i = new Intent(MainActivity.this, NewsFeedActivity.class);
-                startActivity(i);
-                break;
-            case R.id.nav_subscription:
-                Intent subscription = new Intent(MainActivity.this, SubscriptionsActivity.class);
-                startActivity(subscription);
-                break;
-            case R.id.nav_assignment:
-                Intent assignment = new Intent(MainActivity.this, AssignmentActivity.class);
-                startActivity(assignment);
-                break;
 
-            case R.id.nav_ngo:
-                Intent ngo = new Intent(MainActivity.this, NgoActivity.class);
-                startActivity(ngo);
-                break;
-            case R.id.nav_settings:
-                Intent settings = new Intent(MainActivity.this, SettingsActivity.class);
-                startActivity(settings);
-                break;
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

@@ -4,6 +4,16 @@
     <string name="unknown_error">Some unknown error occurred.</string>
     <string name="network_error">Please check your internet connection.</string>
     <string name="system_error">Something went wrong. Please try again later.</string>
+    <string name="confirm">Confirm</string>
+    <string name="name">Name</string>
+    <string name="email">Email</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="logout">Logout</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
     <!-- Custom Fonts -->
     <string name="font_name_montserrat">montserrat</string>
     <string name="font_name_montserrat_bold">montserrat_bold</string>
@@ -16,6 +26,7 @@
     <string name="mobile_number">Mobile Number</string>
     <string name="signup">Sign Up</string>
     <string name="submit">Submit</string>
+    <string name="home">Home</string>
     <string-array name="VolunteerLocation">
         <item>Select Preferred Location</item>
         <item>Ahemdabad</item>

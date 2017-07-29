@@ -6,9 +6,6 @@ import com.archish.makeawish.di.AppComponent;
 import com.archish.makeawish.di.AppModule;
 import com.archish.makeawish.di.DaggerAppComponent;
 
-/**
- * Created by Archish on 2/23/2017.
- */
 
 public class MakeAWishApp extends Application {
     private AppComponent component;

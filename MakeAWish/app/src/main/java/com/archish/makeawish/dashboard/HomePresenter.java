@@ -1,15 +1,12 @@
 package com.archish.makeawish.dashboard;
 
-import com.markdevelopers.rakshak.data.remote.models.HomeWrapper;
-import com.markdevelopers.rakshak.data.repository.UserRepository;
+
+import com.archish.makeawish.data.model.HomeWrapper;
+import com.archish.makeawish.data.repository.UserRepository;
 
 import rx.Observer;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
-
-/**
- * Created by Archish on 1/29/2017.
- */
 
 public class HomePresenter implements HomeContract.HomePresenter {
 

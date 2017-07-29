@@ -13,9 +13,6 @@ import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 import rx.Observable;
 import rx.functions.Func1;
 
-/**
- * Created by Archish on 2/23/2017.
- */
 public class RxErrorHandlingCallAdapterFactory extends CallAdapter.Factory {
     private final RxJavaCallAdapterFactory original;
 

@@ -2,8 +2,9 @@ package com.archish.makeawish.auth;
 
 import android.util.Log;
 
-import com.markdevelopers.rakshak.data.remote.models.UserResponse;
-import com.markdevelopers.rakshak.data.repository.UserRepository;
+
+import com.archish.makeawish.data.model.UserResponse;
+import com.archish.makeawish.data.repository.UserRepository;
 
 import rx.Observer;
 import rx.android.schedulers.AndroidSchedulers;
@@ -25,9 +26,9 @@ public class LoginPresenter implements LoginContract.LoginPresenter {
 
 
     @Override
-    public void login(String fcm_token, String mobileno, String password) {
+    public void login(String fcm_token, String emailid, String password) {
         userRepository
-                .setLogin(fcm_token, mobileno, password)
+                .setLogin(fcm_token, emailid, password)
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.newThread())
                 .subscribe(new Observer<UserResponse>() {
