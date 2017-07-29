@@ -11,5 +11,5 @@ import rx.Observable;
 
 public interface VolunteerRestService {
     @GET("data.php")
-    Observable<ErrorResponse> fetchData();
+    Observable<ErrorResponse> fetchData(String fullname, String info, String sPrefLoc, String emailid, String want);
 }

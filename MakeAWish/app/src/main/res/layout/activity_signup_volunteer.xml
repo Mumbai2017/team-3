@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.archish.makeawish.ui.widgets.BaseEditText
+                    android:id="@+id/etFullName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/full_name" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.archish.makeawish.ui.widgets.BaseEditText
+                    android:id="@+id/tvMobile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/mobile_number" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.archish.makeawish.ui.widgets.BaseEditText
+                    android:id="@+id/tvEmailid"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Email Id" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="6dp">
+
+                <com.archish.makeawish.ui.widgets.BaseTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="How did you get to know about Make-A-Wish India?" />
+
+                <RadioGroup
+                    android:id="@+id/tvInfo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.archish.makeawish.ui.widgets.BaseRadioButton
+                        android:id="@+id/tvNewspaper"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Newspaper" />
+
+                    <com.archish.makeawish.ui.widgets.BaseRadioButton
+                        android:id="@+id/tvInstagram"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Instagram" />
+
+                    <com.archish.makeawish.ui.widgets.BaseRadioButton
+                        android:id="@+id/tvWebsite"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Website" />
+
+                    <com.archish.makeawish.ui.widgets.BaseRadioButton
+                        android:id="@+id/tvFacebook"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Facebook" />
+
+                    <com.archish.makeawish.ui.widgets.BaseRadioButton
+                        android:id="@+id/tvTwitter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Twitter" />
+
+                    <com.archish.makeawish.ui.widgets.BaseRadioButton
+                        android:id="@+id/tvWordofMouth"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Word of mouth" />
+                </RadioGroup>
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="6dp">
+
+                <com.archish.makeawish.ui.widgets.BaseTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Preferred volunteering location" />
+
+                <android.support.v7.widget.AppCompatSpinner
+                        android:id="@+id/sPrefLoc"
+                    style="@style/SecondaryText"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:entries="@array/VolunteerLocation">
+
+                </android.support.v7.widget.AppCompatSpinner>
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.archish.makeawish.ui.widgets.BaseEditText
+                 android:id="@+id/etWant"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="I want to be a volunteer with Make-A-Wish India because" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <com.archish.makeawish.ui.widgets.BaseTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="I hereby confirm that I am above 18 years of age" />
+
+            <com.archish.makeawish.ui.widgets.BaseCheckbox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Yes" />
+
+            <com.archish.makeawish.ui.widgets.BaseButton
+                android:id="@+id/bSubmit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Submit" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
