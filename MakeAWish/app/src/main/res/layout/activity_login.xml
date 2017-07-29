@@ -68,8 +68,7 @@
 
         </RelativeLayout>
 
-        <com.archish.makeawish.ui.widgets.BaseTextView
-
+        <com.archish.makeawish.ui.widgets.BaseButton
             android:id="@+id/bLogin"
             style="@style/BaseButton"
             android:layout_width="match_parent"

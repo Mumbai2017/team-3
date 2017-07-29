@@ -2,9 +2,9 @@ package com.archish.makeawish;
 
 import android.content.Intent;
 
+
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
-import com.markdevelopers.rakshak.news.NewsFeedActivity;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -76,7 +76,7 @@ public class MessengingService extends FirebaseMessagingService {
             NotificationManager mNotificationManager = new NotificationManager(getApplicationContext());
 
             //creating an intent for the notification
-            Intent messageIntent = new Intent(getApplicationContext(), NewsFeedActivity.class);
+            Intent messageIntent = new Intent(getApplicationContext(), MainActivity.class);
             messageIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
 
             String title = data.getString("title");

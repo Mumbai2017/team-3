@@ -1,8 +1,11 @@
 package com.archish.makeawish.di;
 
 import com.archish.makeawish.common.Config;
+import com.archish.makeawish.data.implementations.UserImpl;
 import com.archish.makeawish.data.implementations.VolunteerImpl;
+import com.archish.makeawish.data.remote.UserRestService;
 import com.archish.makeawish.data.remote.VolunteerRestService;
+import com.archish.makeawish.data.repository.UserRepository;
 import com.archish.makeawish.data.repository.VolunteerRepository;
 import com.archish.makeawish.network.RxErrorHandlingCallAdapterFactory;
 
@@ -26,8 +29,19 @@ public class AppModule {
 
     @Provides
     @Singleton
+    UserRepository provideUserRepository(UserRestService volunteerRestService) {
+        return new UserImpl(volunteerRestService);
+    }
+
+    @Provides
+    @Singleton
     VolunteerRestService provideVolunteerRestService(Retrofit retrofit) {
         return retrofit.create(VolunteerRestService.class);
+    }
+    @Provides
+    @Singleton
+    UserRestService provideUserRestService(Retrofit retrofit) {
+        return retrofit.create(UserRestService.class);
     }
 
     @Provides
