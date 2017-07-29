@@ -12,5 +12,18 @@
     <string name="emailid">EmailID</string>
     <string name="volunteer">Volunteer</string>
     <string name="donor">Donor</string>
+    <string name="full_name">Full Name</string>
+    <string name="mobile_number">Mobile Number</string>
+    <string-array name="VolunteerLocation">
+        <item>Select Preferred Location</item>
+        <item>Ahemdabad</item>
+        <item>Bengaluru</item>
+        <item>Chennai</item>
+        <item>Delhi</item>
+        <item>Hyderabad</item>
+        <item>Jaipur</item>
+        <item>Kolkata</item>
+        <item>Mumbai</item>
+    </string-array>
 
 </resources>
