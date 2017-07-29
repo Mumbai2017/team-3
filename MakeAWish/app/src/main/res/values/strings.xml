@@ -10,5 +10,6 @@
     <string name="login">Login</string>
     <string name="password">Password</string>
     <string name="emailid">EmailID</string>
+    <string name="volunteer">Volunteer</string>
 
 </resources>
