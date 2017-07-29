@@ -42,9 +42,9 @@ require '../db_connect.php';
                 $SQL = "INSERT INTO volunteer (vcontact, vaddress, vcategory, vemail, reference, reason, prefloc, otherloc) VALUES ($vcontact, '$vaddress',$vcategory, '$vemail', $reference, '$reason', $prefloc, '$otherloc')";
 
 				$result = mysqli_query($conn, $SQL);
-				if($result == TRUE)
-					{
-									$x = array("success"=>true, "message"=>"Successfully Signed Up.");					
+				if($result == TRUE){
+					$SQL = 
+					$x = array("success"=>true, "message"=>"Successfully Signed Up.");					
 					echo json_encode($x);
 				}else{
 	            	$x = array("success"=>false, "message"=>"Oops! Volunteer Already exists.");
@@ -52,7 +52,7 @@ require '../db_connect.php';
 				}
                 mysqli_close($conn);
                
-                }
+            }
    
 
 ?>
