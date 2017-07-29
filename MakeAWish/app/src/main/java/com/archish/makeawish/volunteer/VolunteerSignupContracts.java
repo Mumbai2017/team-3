@@ -13,6 +13,6 @@ public interface VolunteerSignupContracts {
         void onData(Success success);
     }
     interface VolunteerSignupPresenter{
-        void fetchData(String );
+        void fetchData(String fullname,String info,String sPrefLoc,String emailid,String want);
     }
 }

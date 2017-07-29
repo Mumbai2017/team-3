@@ -1,6 +1,7 @@
 package com.archish.makeawish.data.repository;
 
 import com.archish.makeawish.data.model.ErrorResponse;
+import com.archish.makeawish.data.model.Success;
 
 import rx.Observable;
 
@@ -9,5 +10,5 @@ import rx.Observable;
  */
 
 public interface VolunteerRepository {
-    Observable<ErrorResponse> fetchData();
+    Observable<Success> fetchData(String fullname, String info, String sPrefLoc, String emailid, String want);
 }

@@ -1,8 +1,12 @@
 package com.archish.makeawish.volunteer;
 
 import com.archish.makeawish.data.model.Success;
+import com.archish.makeawish.data.repository.VolunteerRepository;
 
 import rx.Observable;
+import rx.Observer;
+import rx.android.schedulers.AndroidSchedulers;
+import rx.schedulers.Schedulers;
 
 /**
  * Created by Archish on 7/29/2017.
@@ -10,12 +14,36 @@ import rx.Observable;
 
 public class VolunteerSignupPresenter implements VolunteerSignupContracts.VolunteerSignupPresenter {
 
-    VolunteerContracts.LoginView view;
-    UserRepository userRepository;
+    VolunteerSignupContracts.VolunteerSignupView view;
+    VolunteerRepository volunteerRepository;
 
-    public LoginPresenter(UserRepository userRepository, LoginContract.LoginView view) {
+    public VolunteerSignupPresenter(VolunteerRepository volunteerRepository, VolunteerSignupContracts.VolunteerSignupView view) {
         this.view = view;
-        this.userRepository = userRepository;
+        this.volunteerRepository = volunteerRepository;
     }
 
+    @Override
+    public void fetchData(String fullname, String info, String sPrefLoc, String emailid, String want) {
+        volunteerRepository.fetchData(fullname, info, sPrefLoc, emailid, want).observeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(Schedulers.newThread())
+                .subscribe(new Observer<Success>() {
+                    @Override
+                    public void onCompleted() {
+
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        if (view != null) ;
+
+                    }
+
+                    @Override
+                    public void onNext(Success success) {
+                        if (view != null)
+                        view.onData(success);
+
+                    }
+                });
+    }
 }
