@@ -1,7 +1,7 @@
 <?PHP
 require '../db_connect.php';
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+
 	// $vid = $_POST['vid'];
 	// $vname = $_POST['vname']
 	// $vcontact = $_POST['vcontact'];
@@ -18,13 +18,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 	$vname = "Shraddha";
 	$vcontact = 9773919892;
 	$vaddress = "Mumbai,India";
-	$vcategory = "abc";
+	$vcategory = 1;
 	$vemail = "shraddha.mak1911@gmail.com";
-	$reference = "abc.com";
+	$reference = 1;
 	$reason = "xyz";
-	$prefloc = "Mumbai";
+	$prefloc = 1;
 	$otherloc = "";
 	$password = "12345";
+
+
 
 
 
@@ -33,19 +35,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
             $num_rows = mysqli_num_rows($result);
 
             if ($num_rows > 0) {
-                $errorMessage = "Username already taken";
+            	$x = array("Peter"=>"35", "Ben"=>"37");
+            	$success = "{status:true , message:'Oops! volunteer already exists.'}";
+                echo json_encode($success);
             } else {
 
                 $SQL = "INSERT INTO volunteer (vcontact, vaddress, vcategory, vemail, reference, reason, prefloc, otherloc) VALUES ($vcontact, '$vaddress',$vcategory, '$vemail', $reference, '$reason', $prefloc, '$otherloc')";
 
 				$result = mysqli_query($conn, $SQL);
-
+				if($result == TRUE)
+					echo json_encode('{status:true , message:'Successfully Signed Up'}');
 
                 mysqli_close($conn);
-               	$errorMessage = "";
+               
                 //header("Location: login.php");
             }
-	
-}
+   
 
 ?>
