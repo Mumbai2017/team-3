@@ -35,21 +35,24 @@ require '../db_connect.php';
             $num_rows = mysqli_num_rows($result);
 
             if ($num_rows > 0) {
-            	$x = array("Peter"=>"35", "Ben"=>"37");
-            	$success = "{status:true , message:'Oops! volunteer already exists.'}";
-                echo json_encode($success);
+            	$x = array("success"=>false, "message"=>"Oops! Volunteer Already exists.");
+            	echo json_encode($x);
             } else {
 
                 $SQL = "INSERT INTO volunteer (vcontact, vaddress, vcategory, vemail, reference, reason, prefloc, otherloc) VALUES ($vcontact, '$vaddress',$vcategory, '$vemail', $reference, '$reason', $prefloc, '$otherloc')";
 
 				$result = mysqli_query($conn, $SQL);
 				if($result == TRUE)
-					echo json_encode('{status:true , message:'Successfully Signed Up'}');
-
+					{
+									$x = array("success"=>true, "message"=>"Successfully Signed Up.");					
+					echo json_encode($x);
+				}else{
+	            	$x = array("success"=>false, "message"=>"Oops! Volunteer Already exists.");
+	            	echo json_encode($x);
+				}
                 mysqli_close($conn);
                
-                //header("Location: login.php");
-            }
+                }
    
 
 ?>
