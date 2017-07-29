@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout="@+id/editTextamount"
+        android:id="@+id/scrollView2">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:weightSum="1">
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:paddingLeft="13dp"
+                android:paddingRight="13dp"
+                android:layout_height="wrap_content"
+                android:text="               Thank you for your kind consideration to make a donation to grant wishes of children in the age3 to 18 years, diagnosed with a life-threatening medical condition, like Cancer, Thalassemia, HIV etc.
+
+                Power of a Wish: For children battling life-threatening illnesses the joys of childhood are replaced with a daily battle for survival, painful treatment and medication and endless rounds of hospitals. The fulfilment of the most cherished wish of a child who has very little hope of enjoying a normal, healthy life not only gives happiness and joy to him/her but also has a therapeutic effect on the child. Doctors have often reported an improvement in the child’s physical condition, after the fulfilment of his / her dearest wish.
+
+                A wish fulfilment makes a sick child believe that anything is possible – even the future. "
+                android:layout_weight="0.07" />
+
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="308dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/editTextamount"
+                android:layout_marginLeft="39dp"
+                android:layout_marginStart="39dp"
+                android:layout_marginTop="35dp"
+                app:srcCompat="@drawable/image1" />
+
+            <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="327dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/editText4"
+                android:layout_marginLeft="11dp"
+                android:layout_marginStart="11dp"
+                android:layout_marginTop="19dp"
+                android:layout_toEndOf="@+id/imageView"
+                android:layout_toRightOf="@+id/imageView"
+                app:srcCompat="@drawable/image2" />
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="35dp"
+                android:layout_weight="0.08"
+                android:text="Make payment by" />
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="35dp"
+                android:layout_marginStart="131dp"
+                android:layout_marginTop="35dp"
+                android:text="Cash / Cheque" />
+
+            <Button
+                android:id="@+id/button1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="131dp"
+                android:layout_marginStart="131dp"
+                android:layout_marginTop="15dp"
+                android:text="Call Deepak S Bhatia" />
+
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="131dp"
+                android:layout_marginStart="131dp"
+                android:layout_marginTop="15dp"
+                android:text="Vodafone speed transfer" />
+
+            <Button
+                android:id="@+id/button3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="131dp"
+                android:layout_marginStart="131dp"
+                android:layout_marginTop="15dp"
+                android:text="Phonepe" />
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+
+
+</RelativeLayout>
