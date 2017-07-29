@@ -13,6 +13,6 @@ public interface VolunteerSignupContracts {
         void onData(Success success);
     }
     interface VolunteerSignupPresenter{
-        Observable<Success> fetchData(String );
+        void fetchData(String );
     }
 }
