@@ -43,6 +43,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
+            <com.archish.makeawish.ui.widgets.BaseTextView
+                android:id="@+id/tvStatus"
+                style="@style/SecondaryText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:background="@android:color/holo_orange_dark"
+                android:text="In Process" />
 
         </LinearLayout>
 

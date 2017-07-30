@@ -86,6 +86,17 @@
             </android.support.v7.widget.AppCompatSpinner>
         </android.support.design.widget.TextInputLayout>
 
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.archish.makeawish.ui.widgets.BaseEditText
+                android:id="@+id/etWish2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/wish2" />
+        </android.support.design.widget.TextInputLayout>
+
         <android.support.v7.widget.AppCompatSpinner
             android:id="@+id/spinnerw2"
             style="@style/SecondaryText"
@@ -100,10 +111,10 @@
             android:layout_height="wrap_content">
 
             <com.archish.makeawish.ui.widgets.BaseEditText
-                android:id="@+id/etWish2"
+                android:id="@+id/etRush"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/wish2" />
+                android:hint="@string/rushwish" />
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
@@ -111,10 +122,10 @@
             android:layout_height="wrap_content">
 
             <com.archish.makeawish.ui.widgets.BaseEditText
-                android:id="@+id/etRush"
+                android:id="@+id/etWish3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/rushwish" />
+                android:hint="@string/wish2" />
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout

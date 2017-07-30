@@ -51,4 +51,6 @@ public class BaseTextView extends AppCompatTextView {
             return null;
         }
     }
+
+
 }
