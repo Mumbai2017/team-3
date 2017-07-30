@@ -24,7 +24,7 @@ $w3_description = "I want to go to Disney Land";
  $result = mysqli_query($conn, $SQL);
 
  if($result == TRUE){
- 	$SQL = "SELECT pid FROM volunteer_patient v, patinet p where v.pid"
+ 	$SQL = "SELECT pid FROM volunteer_patient where vid='$vid'"
 
  }
 
