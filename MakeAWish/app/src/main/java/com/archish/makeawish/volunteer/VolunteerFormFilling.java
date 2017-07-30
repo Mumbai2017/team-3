@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.speech.RecognizerIntent;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -22,7 +23,7 @@ import java.util.Locale;
  */
 
 public class VolunteerFormFilling extends AppCompatActivity {
-    BaseButton baseButton;
+    FloatingActionButton baseButton;
     private static final int REQ_CODE_SPEECH_INPUT = 100;
     private TextView mVoiceInputTv;
     BaseButton bSubmit;
@@ -32,7 +33,7 @@ public class VolunteerFormFilling extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_capture_by_volunteer);
         mVoiceInputTv = (TextView) findViewById(R.id.voiceInput);
-        baseButton = (BaseButton) findViewById(R.id.bMic);
+        baseButton = (FloatingActionButton) findViewById(R.id.bMic);
         baseButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
