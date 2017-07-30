@@ -1,8 +1,8 @@
 <?PHP
 	require '../db_connect.php';
 
-	$jsonContacts = $_POST['name'];
-	//$jsonContacts = '["9773919892", "9819295737"]' ;
+	//$jsonContacts = $_POST['name'];
+	$jsonContacts = '["9773919892", "9819295737"]' ;
 	$obj = json_decode($jsonContacts, true);
 
 	$post_data = array(
@@ -10,7 +10,7 @@
     // For promotional, this will be ignored by the SMS gateway
     'From'  => '02239971720',
     'To'    => $obj,
-    'Body'  => 'Hi volunteer, your number 9773919892 is now turned on for Make a wish.'
+    'Body'  => 'Hi volunteer, your number 9773919892 is now turned on_Make_A_Wish.'
 	);
  
 $exotel_sid = "student351"; // Your Exotel SID
