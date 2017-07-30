@@ -36,7 +36,7 @@ public class HomeFragment extends Fragment implements HomeContract.HomeView, Hom
         View view = inflater.inflate(R.layout.fragment_home, container, false);
         rvHome = (RecyclerView) view.findViewById(R.id.rvHome);
         tvWeb = (WebView) view.findViewById(R.id.tvWeb);
-        tvWeb.loadUrl("http://");
+        //tvWeb.loadUrl("http://");
         floatingActionButton = (FloatingActionButton) view.findViewById(R.id.fab);
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
