@@ -36,10 +36,21 @@ $w3_description = "I want to go to Disney Land";
  			$qry = "SELECT pname FROM patients where pid = '$onerow[$i]'";
  			//echo $qry;
  			$res = mysqli_query($conn, $qry);
- 			//echo $res;
  			$ans = mysqli_fetch_array($res);
  			$pname = $ans['pname'];
  			echo $ans['pname'];
+
+ 			$qry = "SELECT treatment_locn FROM patients where pid = '$onerow[$i]'";
+ 			$res = mysqli_query($conn, $qry);
+ 			$ans = mysqli_fetch_array($res);
+ 			$tloc = $ans['treatment_locn'];
+ 			echo $ans['treatment_locn'];
+
+ 			$qry = "SELECT dname FROM doctor where did = ' Select did from doctor_patient_mapping where pid = "$onerow[$i]" ' ";
+ 			$res = mysqli_query($conn, $qry);
+ 			$ans = mysqli_fetch_array($res);
+ 			$dname = $ans['dname'];
+ 			echo $ans['dname'];
  			//echo $qry;
  			$i++;
  		}
