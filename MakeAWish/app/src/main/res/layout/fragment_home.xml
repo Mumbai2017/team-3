@@ -18,4 +18,10 @@
         android:layout_margin="16dp"
         android:padding="8dp"
         android:src="@drawable/add" />
+
+    <WebView
+        android:id="@+id/tvWeb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"></WebView>
 </android.support.design.widget.CoordinatorLayout>
