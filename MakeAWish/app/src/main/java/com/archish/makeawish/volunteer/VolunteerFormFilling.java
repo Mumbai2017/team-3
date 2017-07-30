@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.archish.makeawish.R;
 import com.archish.makeawish.ui.widgets.BaseButton;
@@ -24,17 +25,26 @@ public class VolunteerFormFilling extends AppCompatActivity {
     BaseButton baseButton;
     private static final int REQ_CODE_SPEECH_INPUT = 100;
     private TextView mVoiceInputTv;
-    private Button mSpeakBtn;
+    BaseButton bSubmit;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_capture_by_volunteer);
-        baseButton = (BaseButton) findViewById(R.id.bSubmit);
+        mVoiceInputTv = (TextView) findViewById(R.id.voiceInput);
+        baseButton = (BaseButton) findViewById(R.id.bMic);
         baseButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startVoiceInput();
+            }
+        });
+        bSubmit = (BaseButton) findViewById(R.id.bSubmit);
+        bSubmit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getApplicationContext(), "Success", Toast.LENGTH_SHORT).show();
+                finish();
             }
         });
     }

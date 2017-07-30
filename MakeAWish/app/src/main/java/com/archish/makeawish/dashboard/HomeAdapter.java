@@ -69,7 +69,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.NewsFeedViewHo
             super(itemView);
             tvTitle = (BaseTextView) itemView.findViewById(R.id.tvName);
             tvDescription = (BaseTextView) itemView.findViewById(R.id.tvDescription);
-
+            tvStatus = (BaseTextView) itemView.findViewById(R.id.tvStatus);
         }
 
     }

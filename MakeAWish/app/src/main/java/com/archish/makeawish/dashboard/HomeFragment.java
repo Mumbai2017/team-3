@@ -48,6 +48,11 @@ public class HomeFragment extends Fragment implements HomeContract.HomeView, Hom
         homes.add(new Home(2, "Neha", "To have Doll .", "10/12/2015", "Yes", 2, "Mumbai"));
         homes.add(new Home(3, "Karan", "To be Famous.", "10/12/2015", "Yes", 1, "Mumbai"));
         homes.add(new Home(4, "Rashi", "To meet Steve Jobs.", "10/12/2015", "Yes", 3, "Mumbai"));
+        homes.add(new Home(5, "Raj", "To meet Sachin Tendulkar.", "3/2/2016", "Yes", 2, "Mumbai"));
+        homes.add(new Home(6, "Mihir", "To have Doll .", "10/12/2015", "No", 1, "Mumbai"));
+        homes.add(new Home(7, "Joy", "To be Famous.", "6/11/2017", "No", 1, "Mumbai"));
+        homes.add(new Home(8, "Kajal", "To be Singer.", "10/12/2017", "Yes", 2, "Mumbai"));
+
         HomeAdapter homeAdapter = new HomeAdapter(homes, this);
         rvHome.setAdapter(homeAdapter);
         return view;
@@ -62,6 +67,7 @@ public class HomeFragment extends Fragment implements HomeContract.HomeView, Hom
     @Override
     public void onItemCardClicked(Home home) {
         Intent i = new Intent(getActivity(), PatientDetails.class);
+        i.putExtra("home", home);
         startActivity(i);
 
     }
