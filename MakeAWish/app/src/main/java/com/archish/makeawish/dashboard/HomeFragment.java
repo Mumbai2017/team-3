@@ -12,6 +12,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebView;
 import android.widget.ProgressBar;
 
 import com.archish.makeawish.MainActivity;
@@ -27,12 +28,15 @@ import java.util.ArrayList;
 public class HomeFragment extends Fragment implements HomeContract.HomeView, HomeAdapter.LikeItemUpdateListener {
     RecyclerView rvHome;
     FloatingActionButton floatingActionButton;
+    WebView tvWeb;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
         rvHome = (RecyclerView) view.findViewById(R.id.rvHome);
+        tvWeb = (WebView) view.findViewById(R.id.tvWeb);
+
         floatingActionButton = (FloatingActionButton) view.findViewById(R.id.fab);
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
