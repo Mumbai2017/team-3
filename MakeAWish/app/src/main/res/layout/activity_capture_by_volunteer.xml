@@ -122,7 +122,6 @@
             android:layout_height="wrap_content">
 
             <com.archish.makeawish.ui.widgets.BaseEditText
-                android:id="@+id/etWish3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/wish2" />

@@ -47,7 +47,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Amount"
-        android:inputType="textPersonName"
+        android:inputType="numberDecimal"
         android:paddingTop="25dp" />
 
     <com.archish.makeawish.ui.widgets.BaseButton
