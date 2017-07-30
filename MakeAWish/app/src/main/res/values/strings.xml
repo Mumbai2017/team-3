@@ -48,6 +48,8 @@
     <string name="wish1">Wish 1</string>
     <string name="wish2">Wish 2</string>
     <string name="wish3">Wish 3</string>
+    <string name="take">Take a wish</string>
+    <string name="donate_now">DOnate Now!</string>
 
     <string-array name="wishtypes">
         <item>Select Wish type</item>

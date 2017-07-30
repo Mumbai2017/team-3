@@ -18,6 +18,7 @@ import com.archish.makeawish.common.BaseActivity;
 import com.archish.makeawish.data.local.SharedPreferenceManager;
 import com.archish.makeawish.data.model.UserResponse;
 import com.archish.makeawish.data.repository.UserRepository;
+import com.archish.makeawish.donor.DonorFragment;
 import com.archish.makeawish.ui.widgets.BaseButton;
 import com.archish.makeawish.ui.widgets.BaseEditText;
 import com.archish.makeawish.ui.widgets.BaseTextView;
@@ -36,7 +37,7 @@ public class LoginActivity extends BaseActivity implements LoginContract.LoginVi
 
     BaseTextView tvForgotPassword, tvCreateAccount;
     BaseEditText etEmailid, etPassword;
-    BaseButton bLogin;
+    BaseButton bLogin, bDonate;
     LoginPresenter loginPresenter;
 
 
@@ -64,7 +65,12 @@ public class LoginActivity extends BaseActivity implements LoginContract.LoginVi
                 boolean status = validate();
                 if (status) {
                     showProgressDialog();
-        //            loginPresenter.login(new SharedPreferenceManager(getApplicationContext()).getDeviceToken(), etEmailid.getText().toString(), etPassword.getText().toString());
+                    //            loginPresenter.login(new SharedPreferenceManager(getApplicationContext()).getDeviceToken(), etEmailid.getText().toString(), etPassword.getText().toString());
+                    new SharedPreferenceManager(getApplicationContext()).saveMainPage(1);
+                    new SharedPreferenceManager(getApplicationContext()).saveCategory(2);
+                    Intent i = new Intent(LoginActivity.this, MainActivity.class);
+                    startActivity(i);
+                    finish();
                 }
             }
         });
@@ -83,22 +89,20 @@ public class LoginActivity extends BaseActivity implements LoginContract.LoginVi
         etPassword = (BaseEditText) findViewById(R.id.etPassword);
         tvCreateAccount = (BaseTextView) findViewById(R.id.tvCreate);
         bLogin = (BaseButton) findViewById(R.id.bLogin);
+        bDonate = (BaseButton) findViewById(R.id.bDonate);
+        bDonate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new SharedPreferenceManager(getApplicationContext()).saveCategory(3);
+                Intent i = new Intent(LoginActivity.this, MainActivity.class);
+                startActivity(i);
+            }
+        });
     }
 
     @Override
     public void onLogin(UserResponse userResponse) {
         dismissProgressDialog();
-        if (userResponse.getSuccess()) {
-            new SharedPreferenceManager(getApplicationContext()).saveMainPage(1);
-            new SharedPreferenceManager(getApplicationContext()).saveAccessToken(userResponse.getAccessToken());
-            new SharedPreferenceManager(getApplicationContext()).saveCategory(userResponse.getCategory());
-            Intent i = new Intent(LoginActivity.this, MainActivity.class);
-            startActivity(i);
-            finish();
-        } else {
-            Toast.makeText(LoginActivity.this, "Invalid login", Toast.LENGTH_SHORT).show();
-        }
-
     }
 
     @Override
@@ -108,7 +112,7 @@ public class LoginActivity extends BaseActivity implements LoginContract.LoginVi
 
     private boolean validate() {
         if (etEmailid.getText().toString().isEmpty()) {
-            etEmailid.setError("Mobile number cannot be empty");
+            etEmailid.setError("Email Id cannot be empty");
             etEmailid.setFocusable(true);
             return false;
         } else if (etPassword.getText().toString().isEmpty()) {

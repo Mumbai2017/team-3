@@ -15,13 +15,13 @@ import android.widget.Toast;
 
 import com.archish.makeawish.auth.LoginActivity;
 import com.archish.makeawish.auth.LoginContract;
-import com.archish.makeawish.auth.LoginPresenter;
 import com.archish.makeawish.common.BaseActivity;
+import com.archish.makeawish.common.Config;
+import com.archish.makeawish.common.CustomFontLoader;
 import com.archish.makeawish.dashboard.HomeFragment;
 import com.archish.makeawish.data.local.SharedPreferenceManager;
 import com.archish.makeawish.data.model.UserResponse;
-import com.archish.makeawish.data.repository.UserRepository;
-
+import com.archish.makeawish.donor.DonorFragment;
 
 /***
  * MainActivity
@@ -49,8 +49,13 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         if (id == R.id.logout) {
-            //loginPresenter.logout(new SharedPreferenceManager(getApplicationContext()).getAccessToken());
-            showProgressDialog();
+            new SharedPreferenceManager(getApplicationContext()).removeAccessToken();
+            new SharedPreferenceManager(getApplicationContext()).removeCategory();
+            new SharedPreferenceManager(getApplicationContext()).removeMainPage();
+            Intent i = new Intent(MainActivity.this, LoginActivity.class);
+            i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(i);
+            finish();
         }
         return super.onOptionsItemSelected(item);
     }
@@ -65,11 +70,6 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
 //                getSupportFragmentManager().beginTransaction();
 //        fragmentTransaction.replace(R.id.fragment_container, fragment);
 //        fragmentTransaction.commit();
-        HomeFragment fragment = new HomeFragment();
-        android.support.v4.app.FragmentTransaction fragmentTransaction =
-                getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.fragment_container, fragment);
-        fragmentTransaction.commit();
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -84,17 +84,24 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
         //How to change elements in the header programatically
         View headerView = navigationView.getHeaderView(0);
         TextView role = (TextView) headerView.findViewById(R.id.email);
-        if (new SharedPreferenceManager(getApplicationContext()).getCategory() == 3)
-            role.setText(getString(R.string.volunteer));
-        else if (new SharedPreferenceManager(getApplicationContext()).getCategory() == 4)
-            role.setText(getString(R.string.donor));
+        if (new SharedPreferenceManager(getApplicationContext()).getCategory() == 2) {
+            role.setText(R.string.volunteer);
+            HomeFragment fragment = new HomeFragment();
+            android.support.v4.app.FragmentTransaction fragmentTransaction =
+                    getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.fragment_container, fragment);
+            fragmentTransaction.commit();
+
+        } else if (new SharedPreferenceManager(getApplicationContext()).getCategory() == 3) {
+            role.setText(R.string.donor);
+            DonorFragment fragment1 = new DonorFragment();
+            android.support.v4.app.FragmentTransaction fragmentTransaction1 =
+                    getSupportFragmentManager().beginTransaction();
+            fragmentTransaction1.replace(R.id.fragment_container, fragment1);
+            fragmentTransaction1.commit();
+        }
 
         navigationView.setNavigationItemSelectedListener(this);
-//        if (new SharedPreferenceManager(getApplicationContext()).getCategory() == 3)
-//            navigationView.getMenu().findItem(R.id.nav_subscription).setVisible(false);
-//        else if (new SharedPreferenceManager(getApplicationContext()).getCategory() == 4)
-//            navigationView.getMenu().findItem(R.id.nav_assignment).setVisible(false);
-
 
     }
 
@@ -126,21 +133,8 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
 
     @Override
     public void onLogout(UserResponse userResponse) {
-        if (userResponse.getSuccess()) {
-            dismissProgressDialog();
-            new SharedPreferenceManager(getApplicationContext()).removeAccessToken();
-            new SharedPreferenceManager(getApplicationContext()).removeCategory();
-            new SharedPreferenceManager(getApplicationContext()).removeMainPage();
-            Intent i = new Intent(MainActivity.this, LoginActivity.class);
-            i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-            startActivity(i);
-            finish();
 
-
-        } else {
-            dismissProgressDialog();
-            Toast.makeText(MainActivity.this, "Oops something went wrong.", Toast.LENGTH_SHORT).show();
-        }
     }
+
 
 }

@@ -16,7 +16,7 @@
             android:layout_gravity="center"
             android:layout_marginBottom="16dp"
             android:padding="16dp"
-            android:src="@mipmap/ic_launcher" />
+            android:src="@drawable/logo" />
 
         <com.archish.makeawish.ui.widgets.BaseTextView
             style="@style/PrimaryText"
@@ -37,7 +37,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/emailid"
-                android:inputType="phone" />
+                android:inputType="textEmailAddress" />
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
@@ -75,6 +75,21 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="25dp"
             android:text="@string/login" />
+
+        <com.archish.makeawish.ui.widgets.BaseTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:padding="8dp"
+            android:text="OR" />
+
+        <com.archish.makeawish.ui.widgets.BaseButton
+            android:id="@+id/bDonate"
+            style="@style/SecondaryButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/donate_now" />
+
     </LinearLayout>
 
 </ScrollView>

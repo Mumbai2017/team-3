@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="1">
+
+    <com.archish.makeawish.ui.widgets.BaseTextView
+        android:id="@+id/textView4"
+        style="@style/SecondaryText"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="25dp"
+        android:text="To assist you expedite the process, Deepak S Bhatia the CEO at Make-A-Wish India can be reached on his mobile 24 x 7 x 365. You can speak to him on +91 9821 222 506.
+Should you have difficulty in connecting to his mobile number, you can send an sms or wtsap message and Deepak will return your call or you can reach him thru any of the below ways:
+Email : ceo@makeawishindia.org
+Office tel. no.: +9122 2491 9139 or 40 (Monday to Friday between 09.30 am to 5.30 pm)"
+        android:textSize="20sp" />
+</LinearLayout>

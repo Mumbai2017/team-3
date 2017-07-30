@@ -119,6 +119,43 @@
                 <com.archish.makeawish.ui.widgets.BaseTextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:text="I express interest to volunteer in Make-A-Wish India as" />
+
+                <RadioGroup
+                    android:id="@+id/rgVolunteer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+                    <com.archish.makeawish.ui.widgets.BaseRadioButton
+                        android:id="@+id/rbWishGranter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Wish granter (a person who can go to the hospital for meeting children and helping with wish identification from 10.30am-12.30pm or 11am-1pm between Mon-Fri, twice a week for 1 year)" />
+
+                    <com.archish.makeawish.ui.widgets.BaseRadioButton
+                        android:id="@+id/rbWishOrganizer"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Wish organizer (a person who can help grant memorable wishes between Mon-Sat)" />
+
+                    <com.archish.makeawish.ui.widgets.BaseRadioButton
+                        android:id="@+id/rbSkillBased"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Skill based volunteer (a professional person who can donate her/his skills e.g webpage developer / movie making and editing / bloggers / HR / finance / IT / marketing / branding / social media / fund raising / google adwords / sales)" />
+
+                </RadioGroup>
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="6dp">
+
+                <com.archish.makeawish.ui.widgets.BaseTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:text="Preferred volunteering location" />
 
                 <android.support.v7.widget.AppCompatSpinner
