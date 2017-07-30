@@ -1,6 +1,8 @@
 <?PHP
 require '../db_connect.php';
 
+$
+
 $pid = "1";
 $vid = "10";
 $did = "1"
@@ -17,8 +19,16 @@ $w3_type = "I want to go to";
 $w3_description = "I want to go to Disney Land"; 
 
 
- $SQL = "INSERT INTO wish (pid, vid, did, dtofadm, dtidf, granted, dateoffulfill, rushwish, wish1_type, w1desc, w2, w2desc, w3, w3desc) VALUES ('$pid','$vid','$did','$date_of_admit', '$date_of_identification','$granted_or_not', '$expected_date_of_fullfilment', 
-'$rushwish', '$w1_type', '$w1_description', '$w2_type','$w2_description', '$w2_type','$w2_description')";
+ $SQL = "INSERT INTO wish (pid, vid, did, dtofadm, dtidf, granted, dateoffulfill, rushwish, wish1_type, w1desc, w2, w2desc, w3, w3desc) VALUES ('$pid','$vid','$did','$date_of_admit', '$date_of_identification','$granted_or_not', '$expected_date_of_fullfilment', '$rushwish', '$w1_type', '$w1_description', '$w2_type','$w2_description', '$w2_type','$w2_description')";
 
-				$result = mysqli_query($conn, $SQL);
+ $result = mysqli_query($conn, $SQL);
+
+ if($result == TRUE){
+ 	$SQL = "SELECT pid FROM volunteer_patient v, patinet p where v.pid"
+
+ }
+
+
+
+
 ?>

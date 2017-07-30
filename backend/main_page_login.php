@@ -34,7 +34,14 @@ require 'db_connect.php';
     			$result = mysqli_query($conn,$SQL);
     			$row = mysqli_fetch_array($result);
     			$uid = $row['uid'];
-    			$x = array("uid"=> $uid, "role"=>$role);
+
+    			$SQL = "SELECT vcategory from volunteer where uid = '$uid'";
+    			$result = mysqli_query($conn,$SQL);
+    			$row = mysqli_fetch_array($result);
+    			$vcategory = $row['vcategory'];
+
+
+    			$x = array("uid"=> $uid, "role"=>$role, "vcategory"=>$vcategory);
           		echo json_encode($x);
     			//echo "volunteer";
     		// $x = array("uid"=>, "message"=>"Oops! User does not exist.");

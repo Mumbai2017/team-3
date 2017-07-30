@@ -1,7 +1,8 @@
 <?PHP
 	require '../db_connect.php';
 
-	$jsonContacts = '["9773919892", "9819295737"]' ;
+	$jsonContacts = $_POST['name'];
+	//$jsonContacts = '["9773919892", "9819295737"]' ;
 	$obj = json_decode($jsonContacts, true);
 
 	$post_data = array(
@@ -32,7 +33,7 @@ $http_code = curl_getinfo($ch ,CURLINFO_HTTP_CODE);
  
 curl_close($ch);
  
-//print "Response = ".print_r($http_result);
+print "Response = ".print_r($jsonContacts);
 
 
 ?>
