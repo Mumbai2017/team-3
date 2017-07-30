@@ -10,7 +10,7 @@
     // For promotional, this will be ignored by the SMS gateway
     'From'  => '02239971720',
     'To'    => $obj,
-    'Body'  => 'Hi Shraddha, your number 9773919892 is now turned on.'
+    'Body'  => 'Hi volunteer, your number 9773919892 is now turned on for Make a wish.'
 	);
  
 $exotel_sid = "student351"; // Your Exotel SID

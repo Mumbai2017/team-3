@@ -1,11 +1,10 @@
 <?PHP
 require '../db_connect.php';
 
-$
 
 $pid = "1";
 $vid = "10";
-$did = "1"
+$did = "1";
 $date_of_admit = "2017-07-01";
 $date_of_identification = "2017-06-24";
 $granted_or_not = "Yes";
@@ -24,7 +23,17 @@ $w3_description = "I want to go to Disney Land";
  $result = mysqli_query($conn, $SQL);
 
  if($result == TRUE){
- 	$SQL = "SELECT pid FROM volunteer_patient where vid='$vid'"
+ 	
+ 	$SQL = "SELECT pid FROM volunteer_patient where vid='$vid'";
+ 	$result = mysqli_query($conn, $SQL);
+ 	echo "before Insert";
+ 	if($result == TRUE){
+ 		echo "after Insert";
+ 		$rows = mysqli_fetch_all($result, MYSQLI_NUM);
+ 		foreach ($rows as $onerow){
+ 			echo $onerow[0][0]; 
+ 		}
+ 	}
 
  }
 
