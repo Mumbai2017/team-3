@@ -30,8 +30,18 @@ $w3_description = "I want to go to Disney Land";
  		$rows = mysqli_fetch_all($result, MYSQLI_NUM);
  		//echo json_encode($rows);
  		echo $rows['0']['0'];
+ 		$i=0;
  		foreach ($rows as $onerow){
- 			 
+ 			echo $onerow[0];
+ 			$qry = "SELECT pname FROM patients where pid = '$onerow[$i]'";
+ 			//echo $qry;
+ 			$res = mysqli_query($conn, $qry);
+ 			//echo $res;
+ 			$ans = mysqli_fetch_array($res);
+ 			$pname = $ans['pname'];
+ 			echo $ans['pname'];
+ 			//echo $qry;
+ 			$i++;
  		}
  	}
 
